@@ -1,0 +1,25 @@
+{
+  "name": "advent-of-code-2021",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Niklas-Werner/advent-of-code-2021.git",
+  "author": "Niklas Werner <Niklas-Werner@outlook.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "ts-node --transpile-only"
+  },
+  "dependencies": {
+    "@nw55/build-tools": "~0.2.4",
+    "@nw55/common": "~0.2.2",
+    "@nw55/logging": "~0.1.2",
+    "@nw55/node-utils": "~0.1.3",
+    "@types/node": "^16.11.10",
+    "ts-node": "^10.4.0",
+    "typescript": "~4.5.2"
+  },
+  "packageManager": "yarn@3.1.1",
+  "devDependencies": {
+    "@yarnpkg/sdks": "^2.5.1-rc.4"
+  }
+}
