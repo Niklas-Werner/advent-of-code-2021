@@ -1,9 +1,13 @@
 import { Awaitable, TwoWayMap } from '@nw55/common';
 import { Log, LogLevel } from '@nw55/logging';
-import { runMain, tryReadTextFile, useDefaultConsoleLogging } from '@nw55/node-utils';
+import { createConsoleLogWriter, runMain, tryReadTextFile } from '@nw55/node-utils';
+import chalk from 'chalk';
 import { resolve } from 'path';
 
-useDefaultConsoleLogging(LogLevel.Information);
+Log.addGlobalLogWriter(createConsoleLogWriter({
+    filter: LogLevel.All,
+    colorStyler: chalk
+}));
 
 export const dayLogger = Log.createLogger('day');
 
