@@ -1,9 +1,11 @@
 import { Awaitable, TwoWayMap } from '@nw55/common';
-import { LogLevel } from '@nw55/logging';
+import { Log, LogLevel } from '@nw55/logging';
 import { runMain, tryReadTextFile, useDefaultConsoleLogging } from '@nw55/node-utils';
 import { resolve } from 'path';
 
-useDefaultConsoleLogging(LogLevel.Warning);
+useDefaultConsoleLogging(LogLevel.Information);
+
+export const dayLogger = Log.createLogger('day');
 
 export async function readNonEmptyLines(...pathSegments: string[]) {
     const file = resolve(...pathSegments);
