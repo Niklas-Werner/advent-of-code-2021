@@ -6,7 +6,8 @@ import { resolve } from 'path';
 
 Log.addGlobalLogWriter(createConsoleLogWriter({
     filter: LogLevel.All,
-    colorStyler: chalk
+    colorStyler: chalk,
+    logDetails: true
 }));
 
 export const dayLogger = Log.createLogger('day');
