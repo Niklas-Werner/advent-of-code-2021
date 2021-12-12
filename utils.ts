@@ -37,10 +37,9 @@ interface FnOptions {
 
 export function runDay<O extends DayOptions>(dir: string, options: O, fn: (input: InputType<O>, options: FnOptions) => Awaitable<void>) {
     runMain(async ([param]) => {
-        const file = resolve(dir, param === 'test' ? 'test-input' : param === 'test2' ? 'test-input2' : 'input');
-        const fnOptions: FnOptions = {
-            test: param === 'test' ? 1 : param === 'test2' ? 2 : 0
-        };
+        const test = param && param.startsWith('test') ? param.length === 4 ? 1 : parseInt(param.slice(4)) : 0;
+        const file = resolve(dir, test > 0 ? `test-input${test === 1 ? '' : test}` : 'input');
+        const fnOptions: FnOptions = { test };
         let content = await tryReadTextFile(file);
         if (content === null)
             throw new Error('file not found');
