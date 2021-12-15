@@ -113,3 +113,5 @@ export const splitOnce = (separator: string) => (str: string) => {
         str.slice(index + separator.length)
     ] as const;
 };
+
+export const notNull = <T>(value: T | null): value is T => value !== null;
