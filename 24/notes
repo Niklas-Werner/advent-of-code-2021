@@ -1,0 +1,51 @@
+#1 -> A=11, B=8, C=1, D=false
+#2 -> A=14, B=13, C=1, D=false
+#3 -> A=10, B=2, C=1, D=false
+#4 -> A=0, B=7, C=26, D=true
+#5 -> A=12, B=11, C=1, D=false
+#6 -> A=12, B=4, C=1, D=false
+#7 -> A=12, B=13, C=1, D=false
+#8 -> A=-8, B=13, C=26, D=true
+#9 -> A=-9, B=10, C=26, D=true
+#10 -> A=11, B=1, C=1, D=false
+#11 -> A=0, B=2, C=26, D=true
+#12 -> A=-5, B=14, C=26, D=true
+#13 -> A=-6, B=6, C=26, D=true
+#14 -> A=-12, B=14, C=26, D=true
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z C
+add x A
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y B
+mul y x
+add z y
+
+
+w = input()
+x = (z % 26 + A) != w
+z /= C
+y = 25 * x + 1
+z *= y
+y = (w + B) * x
+z += y
+
+
+w = input()
+if w - A == z % 26 then
+    if D then z /= 26 end
+else
+    if D then z /= 26 end
+    z = z * 26 + w + B
+end
